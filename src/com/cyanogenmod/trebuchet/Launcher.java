@@ -2673,6 +2673,11 @@ public final class Launcher extends Activity
         }
         folder.animateOpen();
         growAndFadeOutFolderIcon(folderIcon);
+
+        // Notify the accessibility manager that this folder "window" has appeared and occluded
+        // the workspace items
+        folder.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+        getDragLayer().sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
     }
 
     public void closeFolder() {
@@ -2697,6 +2702,10 @@ public final class Launcher extends Activity
             shrinkAndFadeInFolderIcon(fi);
         }
         folder.animateClosed();
+
+        // Notify the accessibility manager that this folder "window" has disappeard and no
+        // longer occludeds the workspace items
+        getDragLayer().sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
     }
 
     public boolean onLongClick(View v) {
