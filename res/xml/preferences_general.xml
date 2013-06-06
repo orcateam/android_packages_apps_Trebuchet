@@ -27,4 +27,7 @@
     <CheckBoxPreference android:key="ui_general_fullscreen"
         android:title="@string/preferences_interface_general_fullscreen_title"
         android:summary="@string/preferences_interface_general_fullscreen_summary" />
+    <CheckBoxPreference android:key="ui_pinch_expanded"
+             android:title="@string/preferences_pinch_expanded_title"
+             android:defaultValue="false" />
 </PreferenceScreen>

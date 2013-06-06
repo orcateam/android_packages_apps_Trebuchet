@@ -440,7 +440,6 @@ public final class Launcher extends Activity
                 (!mShowHotseat || (verticalHotseat && !LauncherApplication.isScreenLarge()));
         mAutoRotate = PreferencesProvider.Interface.General.getAutoRotate(getResources().getBoolean(R.bool.allow_rotation));
         mLockWorkspace = PreferencesProvider.Interface.General.getLockWorkspace(getResources().getBoolean(R.bool.lock_workspace));
-        mFullscreenMode = PreferencesProvider.Interface.General.getFullscreenMode();
 
         if (PROFILE_STARTUP) {
             android.os.Debug.startMethodTracing(
@@ -3158,7 +3157,7 @@ public final class Launcher extends Activity
 
     void showAllApps(boolean animated) {
         mIsAbsent = false;
-        fadeColors(250, true);
+	fadeColors(250, true);
 
         if (mState != State.WORKSPACE) return;
 

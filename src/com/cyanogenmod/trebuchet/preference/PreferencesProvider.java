@@ -55,6 +55,9 @@ public final class PreferencesProvider {
         editor.apply(); // For better performance
         sKeyValues.put(key, Boolean.valueOf(value));
     }
+    public static boolean getPinchExpanded() {
+        return getBoolean("ui_pinch_expanded", false);
+    }
 
     private static String getString(String key, String def) {
         return sKeyValues.containsKey(key) && sKeyValues.get(key) instanceof String ?
@@ -222,10 +225,10 @@ public final class PreferencesProvider {
             public static void setLockWorkspace(Context ctx, boolean value) {
                 setBoolean(ctx, "ui_general_lock_workspace", value);
             }
-            public static boolean getFullscreenMode() {
-                return getBoolean("ui_general_fullscreen", false);
-            }
-        }
+            public static boolean getPinchExpanded(boolean def) {
+            return getBoolean("ui_pinch_expanded", def);
+    }
+    }
     }
 
     public static class Application {
