@@ -25,6 +25,7 @@
 
     <com.cyanogenmod.trebuchet.DragLayer
         android:id="@+id/drag_layer"
+        android:background="@drawable/workspace_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">

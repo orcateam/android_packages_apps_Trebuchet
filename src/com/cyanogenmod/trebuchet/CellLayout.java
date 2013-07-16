@@ -142,6 +142,9 @@ public class CellLayout extends ViewGroup {
 
     private float mChildrenScale = 1f;
 
+    private boolean mIsHotseat = false;
+    private float mHotseatScale = 1f;
+
     public static final int MODE_DRAG_OVER = 0;
     public static final int MODE_ON_DROP = 1;
     public static final int MODE_ON_DROP_EXTERNAL = 2;
@@ -203,6 +206,8 @@ public class CellLayout extends ViewGroup {
         setAlwaysDrawnWithCacheEnabled(false);
 
         final Resources res = getResources();
+        mHotseatScale = (res.getInteger(R.integer.hotseat_item_scale_percentage) / 100f);
+
         mNormalBackground = res.getDrawable(R.drawable.homescreen_blue_normal_holo);
         mActiveGlowBackground = res.getDrawable(R.drawable.homescreen_blue_strong_holo);
 
@@ -281,12 +286,6 @@ public class CellLayout extends ViewGroup {
         mForegroundRect = new Rect();
 
         mShortcutsAndWidgets = new ShortcutAndWidgetContainer(context);
-
-        if (!LauncherApplication.isScreenLarge()){
-            mCellWidth = (mCellWidth * res.getInteger(R.integer.default_cell_count_x)) / mCountX;
-            mCellHeight = (mCellHeight * res.getInteger(R.integer.default_cell_count_y)) / mCountY;
-        }
-
         mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap);
         addView(mShortcutsAndWidgets);
     }
@@ -619,6 +618,10 @@ public class CellLayout extends ViewGroup {
 
     int getCountY() {
         return mCountY;
+    }
+
+    public void setIsHotseat(boolean isHotseat) {
+        mIsHotseat = isHotseat;
     }
 
     public boolean addViewToCellLayout(View child, int index, int childId, LayoutParams params,
@@ -995,7 +998,7 @@ public class CellLayout extends ViewGroup {
         int numWidthGaps = mCountX - 1;
         int numHeightGaps = mCountY - 1;
 
-        if (mOriginalWidthGap < 0 || mOriginalHeightGap < 0) {
+   //     if (mOriginalWidthGap < 0 || mOriginalHeightGap < 0) {
             int hSpace = widthSpecSize - getPaddingLeft() - getPaddingRight();
             int vSpace = heightSpecSize - getPaddingTop() - getPaddingBottom();
             int hFreeSpace = hSpace - (mCountX * mCellWidth);
@@ -1003,10 +1006,10 @@ public class CellLayout extends ViewGroup {
             mWidthGap = Math.min(mMaxGap, numWidthGaps > 0 ? (hFreeSpace / numWidthGaps) : 0);
             mHeightGap = Math.min(mMaxGap,numHeightGaps > 0 ? (vFreeSpace / numHeightGaps) : 0);
             mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap);
-        } else {
+     /**   } else {
             mWidthGap = mOriginalWidthGap;
             mHeightGap = mOriginalHeightGap;
-        }
+        }*/
 
 
         // Initial values correspond to widthSpecMode == MeasureSpec.EXACTLY

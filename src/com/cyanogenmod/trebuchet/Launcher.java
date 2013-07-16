@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
- * This code has been modified. Portions copyright (C) 2012, ParanoidAndroid Project.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,6 +111,7 @@ import com.cyanogenmod.trebuchet.preference.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -370,6 +370,19 @@ public final class Launcher extends Activity
         }
     }
 
+    private boolean doesFileExist(String filename) {
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput(filename);
+            fis.close();
+            return true;
+        } catch (java.io.FileNotFoundException e) {
+            return false;
+        } catch (java.io.IOException e) {
+            return true;
+        }
+	}
+
     private static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
     }
@@ -386,7 +399,6 @@ public final class Launcher extends Activity
         }
 
         fadeColors(500, false);
-
 
         if (DEBUG_STRICT_MODE) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
@@ -1910,7 +1922,6 @@ public final class Launcher extends Activity
                 return true;
         }
 
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -2630,7 +2641,6 @@ public final class Launcher extends Activity
                 // User long pressed on empty space
                 mWorkspace.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,
                         HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
-
                 startWallpaper();
             } else {
                 if (!(itemUnderLongClick instanceof Folder)) {
@@ -3113,10 +3123,6 @@ public final class Launcher extends Activity
                     disableWallpaperIfInAllApps();
                 }
             }, 500);
-
-            if (mFullscreenMode) {
-                updateFullscreenMode(true);
-            }
         }
     }
 
@@ -3160,7 +3166,7 @@ public final class Launcher extends Activity
 
     void showAllApps(boolean animated) {
         mIsAbsent = false;
-	fadeColors(250, true);
+        fadeColors(250, false);
 
         if (mState != State.WORKSPACE) return;
 
@@ -3314,7 +3320,7 @@ public final class Launcher extends Activity
     /** Maps the current orientation to an index for referencing orientation correct global icons */
     private int getCurrentOrientationIndexForGlobalIcons() {
         // default - 0, landscape - 1
-        switch (getCurrentOrientation()) {
+        switch (getResources().getConfiguration().orientation) {
         case Configuration.ORIENTATION_LANDSCAPE:
             return 1;
         default:
@@ -3527,17 +3533,7 @@ public final class Launcher extends Activity
         // Find the app market activity by resolving an intent.
         // (If multiple app markets are installed, it will return the ResolverActivity.)
         ComponentName activityName = intent.resolveActivity(getPackageManager());
-
-        // Check to see if overflow menu is shown
-        Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
-        launcherIntent.addCategory(Intent.CATEGORY_HOME);
-        launcherIntent.addCategory(Intent.CATEGORY_DEFAULT);
-        ActivityInfo defaultLauncher = getPackageManager().resolveActivity(launcherIntent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo;
-        // Hide preferences if not on CyanogenMod or not default launcher
-        // (in which case preferences don't get shown in system settings)
-        boolean preferencesVisible = !getPackageManager().hasSystemFeature("com.cyanogenmod.android") ||
-                !defaultLauncher.packageName.equals(getClass().getPackage().getName());
-        if (activityName != null && (ViewConfiguration.get(this).hasPermanentMenuKey() || !preferencesVisible)) {
+        if (activityName != null) {
             int coi = getCurrentOrientationIndexForGlobalIcons();
             mAppMarketIntent = intent;
             sAppMarketIcon[coi] = updateTextButtonWithIconFromExternalActivity(
@@ -3587,12 +3583,10 @@ public final class Launcher extends Activity
         // (in which case preferences don't get shown in system settings)
         boolean preferencesVisible = !getPackageManager().hasSystemFeature("com.cyanogenmod.android") ||
                 !defaultLauncher.packageName.equals(getClass().getPackage().getName());
-        if (ViewConfiguration.get(this).hasPermanentMenuKey() || !preferencesVisible) {
-            overflowMenuButton.setVisibility(View.GONE);
-            overflowMenuButton.setEnabled(false);
-        } else {
-            overflowMenuButton.setVisibility(View.VISIBLE);
-        }
+
+        boolean disabled = ViewConfiguration.get(this).hasPermanentMenuKey() || !preferencesVisible;
+        overflowMenuButton.setVisibility(disabled ? View.GONE : View.VISIBLE);
+        overflowMenuButton.setEnabled(!disabled);
     }
 
     /**
