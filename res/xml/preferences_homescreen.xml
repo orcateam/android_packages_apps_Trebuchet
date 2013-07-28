@@ -45,6 +45,10 @@
             launcher:maxExternal="ui_homescreen_screens"
             launcher:max="5"
             launcher:min="1" />
+        <CheckBoxPreference android:key="ui_homescreen_stretch_screens"
+            android:title="@string/preferences_interface_homescreen_general_stretch_screens_title"
+            android:summary="@string/preferences_interface_homescreen_general_stretch_screens_summary"
+            android:defaultValue="true" />
         <CheckBoxPreference android:key="ui_homescreen_general_search"
             android:title="@string/preferences_interface_homescreen_general_search_title"
             android:summary="@string/preferences_interface_homescreen_general_search_summary"
@@ -64,6 +68,10 @@
             android:title="@string/preferences_interface_homescreen_scrolling_scroll_wallpaper_title"
             android:summary="@string/preferences_interface_homescreen_scrolling_scroll_wallpaper_summary"
             android:defaultValue="true" />
+        <CheckBoxPreference android:key="ui_homescreen_scrolling_wallpaper_hack"
+            android:title="@string/preferences_interface_homescreen_scrolling_wallpaper_hack_title"
+            android:summary="@string/preferences_interface_homescreen_scrolling_wallpaper_hack_summary"
+            android:defaultValue="@bool/config_workspaceDefaultWallpaperHack" />
         <com.cyanogenmod.trebuchet.preference.NumberPickerPreference android:key="ui_homescreen_scrolling_wallpaper_size"
             android:title="@string/preferences_interface_homescreen_scrolling_wallpaper_size_title"
             android:summary="@string/preferences_interface_homescreen_scrolling_wallpaper_size_summary"
