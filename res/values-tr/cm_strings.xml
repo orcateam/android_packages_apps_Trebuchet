@@ -111,8 +111,6 @@
     <string name="preferences_interface_general_orientation_title">Ekranı otomatik döndür</string>
     <string name="preferences_interface_general_lock_workspace_title">Ev ekranını kilitle</string>
     <string name="preferences_interface_general_lock_workspace_summary">Ana ekrandaki kısayol ve klasör konumlarını, dock\'u, uygulamaları ve widget çekmecesini kilitle</string>
-    <string name="preferences_interface_general_fullscreen_title">Tam ekran modu</string>
-    <string name="preferences_interface_general_fullscreen_summary">Ana ekran büyütmek için durum çubuğunu gizle</string>
     <string name="effects_standard">Standart</string>
     <string name="effects_tablet">Tablet</string>
     <string name="effects_zoom_in">Yakınlaştır</string>

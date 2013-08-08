@@ -97,8 +97,6 @@
     <string name="preferences_interface_icons_title">Ikony</string>
     <string name="preferences_interface_general_title">Główne</string>
     <string name="preferences_interface_general_orientation_title">Autoobracanie ekranu</string>
-    <string name="preferences_interface_general_fullscreen_title">Tryb pełnoekranowy</string>
-    <string name="preferences_interface_general_fullscreen_summary">Ukrywa pasek stanu, by rozszerzyć stronę główną</string>
     <string name="effects_standard">Standardowo</string>
     <string name="effects_tablet">Jak w tablecie</string>
     <string name="effects_zoom_in">Powiększanie</string>

@@ -131,8 +131,6 @@
     <string name="preferences_interface_general_orientation_title">Автоповорот экрана</string>
     <string name="preferences_interface_general_lock_workspace_title">Запретить изменение</string>
     <string name="preferences_interface_general_lock_workspace_summary">Запрещать изменение ярлыков, папок, нижней панели и виджетов на главном экране</string>
-    <string name="preferences_interface_general_fullscreen_title">Полноэкранный режим</string>
-    <string name="preferences_interface_general_fullscreen_summary">Скрывать строку состояния для увеличения площади главных экранов</string>
 
     <!-- Effects -->
     <string name="effects_standard">Стандартный</string>

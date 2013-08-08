@@ -116,8 +116,6 @@
     <string name="preferences_interface_general_orientation_title">Rotation auto. de l\'écran</string>
     <string name="preferences_interface_general_lock_workspace_title">Verrouiller l\'écran d\'accueil</string>
     <string name="preferences_interface_general_lock_workspace_summary">Verrouiller la position des raccourcis et des dossiers sur l\'écran d\'accueil, dans le dock et dans le menu des applications et des widgets</string>
-    <string name="preferences_interface_general_fullscreen_title">Plein écran</string>
-    <string name="preferences_interface_general_fullscreen_summary">Cacher la barre d\'état pour étendre l\'écran d\'accueil</string>
     <string name="effects_standard">Standard</string>
     <string name="effects_tablet">Tablette</string>
     <string name="effects_zoom_in">Zoom intérieur</string>

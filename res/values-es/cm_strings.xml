@@ -116,8 +116,6 @@
     <string name="preferences_interface_general_orientation_title">Rotación automática pantalla</string>
     <string name="preferences_interface_general_lock_workspace_title">Bloquear escritorio</string>
     <string name="preferences_interface_general_lock_workspace_summary">Bloquear la posición de carpetas y accesos directos en el escritorio, incluyendo los widgets y la barra de aplicaciones</string>
-    <string name="preferences_interface_general_fullscreen_title">Modo pantalla completa</string>
-    <string name="preferences_interface_general_fullscreen_summary">Ocultar la barra de estado para extender la pantalla de inicio</string>
     <string name="effects_standard">Estándar</string>
     <string name="effects_tablet">Tablet</string>
     <string name="effects_zoom_in">Zoom entrante</string>

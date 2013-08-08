@@ -94,8 +94,6 @@
     <string name="preferences_interface_icons_title">Kuvakkeet</string>
     <string name="preferences_interface_general_title">Yleiset</string>
     <string name="preferences_interface_general_orientation_title">Automaattinen näytön asento</string>
-    <string name="preferences_interface_general_fullscreen_title">Koko näytön tila</string>
-    <string name="preferences_interface_general_fullscreen_summary">Piilota tilapalkki suurentaaksesi kotinäyttöä</string>
     <string name="menu">Valikko</string>
     <string name="edit_target_label">Muokkaa</string>
     <string name="menu_apps_filter_system">Järjestelmä</string>

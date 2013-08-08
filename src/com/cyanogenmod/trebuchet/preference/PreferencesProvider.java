@@ -228,9 +228,6 @@ public final class PreferencesProvider {
             public static void setLockWorkspace(Context ctx, boolean value) {
                 setBoolean(ctx, "ui_general_lock_workspace", value);
             }
-            public static boolean getFullscreenMode() {
-                return getBoolean("ui_general_fullscreen", false);
-            }
         }
     }
 

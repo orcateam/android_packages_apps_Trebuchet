@@ -105,8 +105,6 @@
     <string name="preferences_interface_icons_title">Pictogrammen</string>
     <string name="preferences_interface_general_title">Algemeen</string>
     <string name="preferences_interface_general_orientation_title">Scherm automatisch draaien</string>
-    <string name="preferences_interface_general_fullscreen_title">Volledig scherm</string>
-    <string name="preferences_interface_general_fullscreen_summary">De statusbalk verbergen om het startscherm uit te breiden</string>
     <string name="menu">Menu</string>
     <string name="edit_target_label">Bewerken</string>
     <string name="menu_apps_filter_system">Systeem</string>

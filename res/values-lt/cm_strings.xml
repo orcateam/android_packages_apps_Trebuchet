@@ -93,6 +93,4 @@
     <string name="preferences_interface_icons_title">Piktogramos</string>
     <string name="preferences_interface_general_title">Pagrindiniai</string>
     <string name="preferences_interface_general_orientation_title">Automatiškai sukti</string>
-    <string name="preferences_interface_general_fullscreen_title">Per visą ekraną</string>
-    <string name="preferences_interface_general_fullscreen_summary">Slepia būsenos juostą</string>
 </resources>

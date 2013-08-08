@@ -327,7 +327,6 @@ public final class Launcher extends Activity
     private boolean mHideDockIconLabels;
     private boolean mAutoRotate;
     private boolean mLockWorkspace;
-    private boolean mFullscreenMode;
 
     private boolean mWallpaperVisible;
 
@@ -439,7 +438,6 @@ public final class Launcher extends Activity
                 (!mShowHotseat || (verticalHotseat && !LauncherApplication.isScreenLarge()));
         mAutoRotate = PreferencesProvider.Interface.General.getAutoRotate(getResources().getBoolean(R.bool.allow_rotation));
         mLockWorkspace = PreferencesProvider.Interface.General.getLockWorkspace(getResources().getBoolean(R.bool.lock_workspace));
-        mFullscreenMode = PreferencesProvider.Interface.General.getFullscreenMode();
 
         if (PROFILE_STARTUP) {
             android.os.Debug.startMethodTracing(
@@ -2725,15 +2723,6 @@ public final class Launcher extends Activity
         setWorkspaceBackground(visible);
     }
 
-    private void updateFullscreenMode(boolean enable) {
-        int fsflags = enable ? WindowManager.LayoutParams.FLAG_FULLSCREEN : 0;
-        int curflags = getWindow().getAttributes().flags
-                & WindowManager.LayoutParams.FLAG_FULLSCREEN;
-        if (fsflags != curflags) {
-            getWindow().setFlags(fsflags, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-     }
-
     private void dispatchOnLauncherTransitionPrepare(View v, boolean animated, boolean toWorkspace) {
         if (v instanceof LauncherTransitionable) {
             ((LauncherTransitionable) v).onLauncherTransitionPrepare(this, animated, toWorkspace);
@@ -3110,10 +3099,6 @@ public final class Launcher extends Activity
                     disableWallpaperIfInAllApps();
                 }
             }, 500);
-
-            if (mFullscreenMode) {
-                updateFullscreenMode(true);
-            }
         }
     }
 

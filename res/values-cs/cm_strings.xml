@@ -117,8 +117,6 @@
     <string name="preferences_interface_general_orientation_title">Automaticky otáčet displej</string>
     <string name="preferences_interface_general_lock_workspace_title">Uzamknout pracovní plochu</string>
     <string name="preferences_interface_general_lock_workspace_summary">Pozice všech zástupců a složek budou na pracovní ploše, v doku, ve složce widgetů a aplikací uzamčeny</string>
-    <string name="preferences_interface_general_fullscreen_title">Režim na celý displej</string>
-    <string name="preferences_interface_general_fullscreen_summary">Skrýt stavový řádek a rozšířit plochy</string>
 
     <string name="effects_standard">Klasické posunutí</string>
     <string name="effects_tablet">Tablet</string>
