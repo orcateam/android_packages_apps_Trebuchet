@@ -115,8 +115,6 @@
     <string name="preferences_interface_general_orientation_title">Rotazione schermo</string>
     <string name="preferences_interface_general_lock_workspace_title">Blocca schermata Home</string>
     <string name="preferences_interface_general_lock_workspace_summary">Blocca le scorciatoie e la posizione delle cartelle nella schermata Home, dock e drawer applicazioni e widget</string>
-    <string name="preferences_interface_general_fullscreen_title">Modalità schermo intero</string>
-    <string name="preferences_interface_general_fullscreen_summary">Nascondi la barra di stato per estendere la schermata Home</string>
     <string name="effects_standard">Predefinito</string>
     <string name="effects_tablet">Tablet</string>
     <string name="effects_zoom_in">Riduci</string>

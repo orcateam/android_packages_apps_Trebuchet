@@ -110,8 +110,6 @@
     <string name="preferences_interface_general_orientation_title">Roter skjerm automatisk</string>
     <string name="preferences_interface_general_lock_workspace_title">Lås hjemmeskjerm</string>
     <string name="preferences_interface_general_lock_workspace_summary">Lås posisjonen på snarveier og mapper på hjemmeskjermen, i dokksonen og i app- og modul-skuffen</string>
-    <string name="preferences_interface_general_fullscreen_title">Fullskjermmodus</string>
-    <string name="preferences_interface_general_fullscreen_summary">Skjul statuslinjen for å utvide hjemmeskjermen</string>
     <string name="effects_standard">Standard</string>
     <string name="effects_tablet">Nettbrett</string>
     <string name="effects_zoom_in">Zoom inn</string>

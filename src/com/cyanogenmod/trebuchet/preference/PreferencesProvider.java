@@ -233,8 +233,8 @@ public final class PreferencesProvider {
             }
             public static boolean getPinchExpanded(boolean def) {
             return getBoolean("ui_pinch_expanded", def);
-    }
-    }
+            }
+        }
     }
 
     public static class Application {

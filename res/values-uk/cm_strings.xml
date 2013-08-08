@@ -90,6 +90,4 @@
     <string name="preferences_interface_icons_title">Значки</string>
     <string name="preferences_interface_general_title">Головні</string>
     <string name="preferences_interface_general_orientation_title">Автоповорот екрану</string>
-    <string name="preferences_interface_general_fullscreen_title">Повноекранний режим</string>
-    <string name="preferences_interface_general_fullscreen_summary">Приховувати рядок стану для збільшення площі робочих столів</string>
 </resources>

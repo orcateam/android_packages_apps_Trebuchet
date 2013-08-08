@@ -116,8 +116,6 @@
     <string name="preferences_interface_general_orientation_title">Αυτόματη περιστροφή οθόνης</string>
     <string name="preferences_interface_general_lock_workspace_title">Κλείδωμα αρχικής οθόνης</string>
     <string name="preferences_interface_general_lock_workspace_summary">Κλείδωμα θέσης συντομεύσεων και φακέλων στην αρχική οθόνη, dock και συρταριού εφαρμογών και widget</string>
-    <string name="preferences_interface_general_fullscreen_title">Λειτουργία πλήρους οθόνης</string>
-    <string name="preferences_interface_general_fullscreen_summary">Απόκρυψη της μπάρας ειδοποιήσεων για επέκταση της αρχικής οθόνης</string>
     <string name="effects_standard">Κανονικό</string>
     <string name="effects_tablet">Tablet</string>
     <string name="effects_zoom_in">Ζουμ μέσα</string>

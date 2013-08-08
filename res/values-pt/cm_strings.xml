@@ -91,8 +91,6 @@
     <string name="preferences_interface_dock_default_page_summary">Escolha a página padrão</string>
     <string name="preferences_interface_dock_pages_title">Páginas</string>
     <string name="preferences_interface_dock_pages_summary">Número de páginas no dock</string>
-    <string name="preferences_interface_general_fullscreen_title">Modo tela cheia</string>
-    <string name="preferences_interface_general_fullscreen_summary">Esconder a barra de status para extender a tela inicial</string>
     <string name="menu_apps_filter_system">Sistema</string>
     <string name="menu_apps_filter_downloaded">Baixado</string>
     <string name="menu_hidden_apps_delete">Restaurar</string>
