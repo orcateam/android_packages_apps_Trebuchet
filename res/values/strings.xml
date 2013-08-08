@@ -274,4 +274,5 @@ s -->
     <!-- Dummy string [CHAR_LIMIT=60] -->
     <string name="custom_workspace_cling_description_2"></string>
 
+    <string name="preferences_pinch_expanded_title">Pinch to enable expanded desktop</string>
 </resources>
