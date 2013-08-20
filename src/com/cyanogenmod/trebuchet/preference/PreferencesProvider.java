@@ -64,6 +64,14 @@ public final class PreferencesProvider {
                 (String) sKeyValues.get(key) : def;
     }
 
+    private static void setString(Context ctx, String key, String value) {
+        SharedPreferences preferences = ctx.getSharedPreferences(PREFERENCES_KEY, 0);
+        Editor editor = preferences.edit();
+        editor.putString(key, value);
+        editor.apply(); // For better performance
+        sKeyValues.put(key, value);
+    }
+
     public static class Interface {
         public static class Homescreen {
             public static int getNumberHomescreens() {
@@ -233,6 +241,12 @@ public final class PreferencesProvider {
             }
             public static boolean getPinchExpanded(boolean def) {
             return getBoolean("ui_pinch_expanded", def);
+            }
+            public static String getIconPack() {
+                return getString("ui_general_iconpack", "");
+            }
+            public static void setIconPack(Context ctx, String packageName) {
+                setString(ctx, "ui_general_iconpack", packageName);
             }
         }
     }

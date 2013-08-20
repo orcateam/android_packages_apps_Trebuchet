@@ -27,4 +27,7 @@
     <CheckBoxPreference android:key="ui_pinch_expanded"
         android:title="@string/preferences_pinch_expanded_title"
         android:defaultValue="false" />
+    <Preference android:key="ui_general_iconpack"
+        android:title="@string/preferences_interface_general_iconpack_title"
+        android:summary="@string/preferences_interface_general_iconpack_summary" />
 </PreferenceScreen>

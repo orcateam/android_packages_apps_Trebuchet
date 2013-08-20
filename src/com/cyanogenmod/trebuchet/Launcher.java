@@ -421,9 +421,6 @@ public final class Launcher extends Activity
         mInflater = getLayoutInflater();
         final Resources res = getResources();
 
-        // Load all preferences
-        PreferencesProvider.load(this);
-
         mPowerManager = (PowerManager) getSystemService(POWER_SERVICE);
 
         mAppWidgetManager = AppWidgetManager.getInstance(this);
